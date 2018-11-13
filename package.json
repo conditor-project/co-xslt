@@ -16,9 +16,9 @@
   "author": "conditor-team",
   "license": "GNU",
   "dependencies": {
-    "bluebird": "^3.5.2",
-    "computron": "0.0.5",
-    "fs-extra": "^7.0.0",
+    "bluebird": "^3.5.3",
+    "computron": "^1.0.2",
+    "fs-extra": "^7.0.1",
     "tei-conditor": "git+https://github.com/conditor-project/tei-conditor.git"
   },
   "devDependencies": {

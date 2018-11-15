@@ -33,7 +33,10 @@ coXslt.doTheJob = function (docObject, next) {
       docObject.teiDocPath = teiDocPath;
       next(null, docObject);
     })
-    .catch(next);
+    .catch(error => {
+      docObject.error = error;
+      next(error);
+    });
 };
 
 module.exports = coXslt;

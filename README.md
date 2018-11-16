@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/conditor-project/co-xslt.svg?branch=master)](https://travis-ci.org/conditor-project/co-xslt)
 # co-xslt
 
 ## Présentation

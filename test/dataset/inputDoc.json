@@ -8,5 +8,5 @@
   "source": "pubmed",
   "id": 666,
   "originDocPath": "test/dataset/pubmed/pubmed-11748933.xml",
-  "ingestId": "PUDMED-NO-ID"
+  "sessionName": "PUDMED-NO-ID"
 }

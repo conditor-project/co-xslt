@@ -16,14 +16,14 @@
   "author": "conditor-team",
   "license": "GNU",
   "dependencies": {
-    "bluebird": "^3.5.3",
-    "computron": "^1.0.2",
-    "fs-extra": "^7.0.1",
+    "bluebird": "^3.5.5",
+    "computron": "^1.1.0",
+    "fs-extra": "^8.0.1",
     "tei-conditor": "git+https://github.com/conditor-project/tei-conditor.git"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^5.2.0",
-    "nyc": "^13.1.0"
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1"
   }
 }

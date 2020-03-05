@@ -30,6 +30,7 @@ coXslt.doTheJob = function (docObject, next) {
     })
     .then(xmlTei => fse.writeFile(teiDocPath, xmlTei))
     .then(() => {
+      docObject.path = teiDocPath;
       docObject.teiDocPath = teiDocPath;
       next(null, docObject);
     })

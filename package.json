@@ -1,6 +1,6 @@
 {
   "name": "co-xslt",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "XSL transformation module",
   "main": "index.js",
   "scripts": {

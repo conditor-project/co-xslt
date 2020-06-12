@@ -26,7 +26,9 @@ coXslt.doTheJob = function (docObject, next) {
     })
     .then(() => {
       const originDocPath = (docObject.originDocPath[0] === '/') ? docObject.originDocPath : path.join(__dirname, docObject.originDocPath);
-      return transformer.applyAsync(originDocPath);
+      let conf = typeof coXslt.config !== "undefined" ? coXslt.config : {};
+      if (typeof conf.DateCreat === "undefined") conf.DateCreat = today();
+      return transformer.applyAsync(originDocPath, conf);
     })
     .then(xmlTei => fse.writeFile(teiDocPath, xmlTei))
     .then(() => {
@@ -39,5 +41,21 @@ coXslt.doTheJob = function (docObject, next) {
       next(error);
     });
 };
+
+function today() {
+  let date = new Date(),
+    dd = date.getDate(),
+    mm = date.getMonth()+1,
+    yyyy = date.getFullYear();
+
+  if(dd<10) {
+    dd='0'+dd;
+  }
+
+  if(mm<10) {
+    mm='0'+mm;
+  }
+  return dd+'/'+mm+'/'+yyyy;
+}
 
 module.exports = coXslt;

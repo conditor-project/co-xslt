@@ -27,7 +27,7 @@ coXslt.doTheJob = function (docObject, next) {
     .then(() => {
       const originDocPath = (docObject.originDocPath[0] === '/') ? docObject.originDocPath : path.join(__dirname, docObject.originDocPath);
       let conf = typeof coXslt.config !== "undefined" ? coXslt.config : {};
-      if (typeof conf.DateCreat === "undefined") conf.DateCreat = today();
+      if (typeof conf.today === "undefined") conf.today = today();
       return transformer.applyAsync(originDocPath, conf);
     })
     .then(xmlTei => fse.writeFile(teiDocPath, xmlTei))

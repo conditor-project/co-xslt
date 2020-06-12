@@ -55,7 +55,7 @@ function today() {
   if(mm<10) {
     mm='0'+mm;
   }
-  return dd+'/'+mm+'/'+yyyy;
+  return yyyy+'/'+mm+'/'+dd;
 }
 
 module.exports = coXslt;

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record>
+  <leader>     clm0 22        450 </leader>
+  <controlfield tag="001">195306112</controlfield>
+  <controlfield tag="002">107</controlfield>
+  <controlfield tag="003">http://www.sudoc.fr/195306112</controlfield>
+  <controlfield tag="004">20160927</controlfield>
+  <controlfield tag="005">20200308204245.000</controlfield>
+  <controlfield tag="006">4001</controlfield>
+  <controlfield tag="007">1999</controlfield>
+  <controlfield tag="008">Oax3</controlfield>
+  <datafield tag="029" ind1=" " ind2=" ">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">2015ISAL0125</subfield>
+  </datafield>
+  <datafield tag="033" ind1=" " ind2=" ">
+    <subfield code="a">http://www.theses.fr/2015ISAL0125</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)959248592</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">STAR75881</subfield>
+  </datafield>
+  <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">20160927d2015    k  y0frey50      ba</subfield>
+  </datafield>
+  <datafield tag="101" ind1="0" ind2=" ">
+    <subfield code="a">fre</subfield>
+    <subfield code="d">fre</subfield>
+    <subfield code="d">eng</subfield>
+  </datafield>
+  <datafield tag="102" ind1=" " ind2=" ">
+    <subfield code="a">FR</subfield>
+  </datafield>
+  <datafield tag="105" ind1=" " ind2=" ">
+    <subfield code="a">y   ma  00|yy</subfield>
+  </datafield>
+  <datafield tag="135" ind1=" " ind2=" ">
+    <subfield code="a">dr|||||||||||</subfield>
+  </datafield>
+  <datafield tag="181" ind1=" " ind2=" ">
+    <subfield code="6">z01</subfield>
+    <subfield code="c">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="181" ind1=" " ind2="1">
+    <subfield code="6">z01</subfield>
+    <subfield code="a">i#</subfield>
+    <subfield code="b">xxxe##</subfield>
+  </datafield>
+  <datafield tag="182" ind1=" " ind2=" ">
+    <subfield code="6">z01</subfield>
+    <subfield code="c">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="182" ind1=" " ind2="1">
+    <subfield code="6">z01</subfield>
+    <subfield code="a">b</subfield>
+  </datafield>
+  <datafield tag="183" ind1=" " ind2="1">
+    <subfield code="6">z01</subfield>
+    <subfield code="a">ceb</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="200" ind1="1" ind2=" ">
+    <subfield code="a">Caractéristiques d&apos;une butée de turbocompresseur</subfield>
+    <subfield code="e">Approches numérique et expérimentale</subfield>
+    <subfield code="f">Benoit Remy</subfield>
+    <subfield code="g">sous la direction de Benyebka Bou-Saïd</subfield>
+  </datafield>
+  <datafield tag="214" ind1=" " ind2="1">
+    <subfield code="d">2015</subfield>
+  </datafield>
+  <datafield tag="230" ind1=" " ind2=" ">
+    <subfield code="a">Données textuelles</subfield>
+  </datafield>
+  <datafield tag="304" ind1=" " ind2=" ">
+    <subfield code="a">Titre provenant de l&apos;écran-titre</subfield>
+  </datafield>
+  <datafield tag="310" ind1=" " ind2=" ">
+    <subfield code="a">Thèse confidentielle jusqu&apos;au 09 décembre 2020</subfield>
+  </datafield>
+  <datafield tag="314" ind1=" " ind2=" ">
+    <subfield code="a">Ecole(s) Doctorale(s) : Ecole Doctorale Mecanique, Energetique, Genie Civil, Acoustique (Villeurbanne)</subfield>
+  </datafield>
+  <datafield tag="314" ind1=" " ind2=" ">
+    <subfield code="a">Partenaire(s) de recherche : LaMCoS - Laboratoire de Mécanique des Contacts et des Structures, UMR 5259 (Lyon, INSA) (Laboratoire), Laboratoire de Mécanique des Contacts et des Structures [Villeurbanne] / LaMCoS (Laboratoire)</subfield>
+  </datafield>
+  <datafield tag="314" ind1=" " ind2=" ">
+    <subfield code="a">Autre(s) contribution(s) : Fabrice Ville (Président du jury) ; Benyebka Bou-Saïd, Fabrice Ville, Michel Fillon, John Tichy, Mathieu Garcia, Kostandin Gjika, Thierry Lamquin, Wolfgang Seemann (Membre(s) du jury) ; Michel Fillon, John Tichy (Rapporteur(s))</subfield>
+  </datafield>
+  <datafield tag="328" ind1=" " ind2="0">
+    <subfield code="b">Thèse de doctorat</subfield>
+    <subfield code="c">Mécanique</subfield>
+    <subfield code="e">Lyon, INSA</subfield>
+    <subfield code="d">2015</subfield>
+  </datafield>
+  <datafield tag="330" ind1=" " ind2=" ">
+    <subfield code="a">En raison de la tendance grandissante du downsizing, des hautes performances, des réductions de la consommation et des émissions des véhicules modernes, la turbocompression des moteurs thermiques s’avère de plus en plus innovante et technologique. Leader dans ce domaine, Honeywell Turbo Technologies s’intéresse à deux axes de recherche majeurs des systèmes lubrifiés. Un délai temporel est couramment observé entre l’appui sur la pédale d’accélérateur et l’augmentation de la pression de l’air ambiant du côté de la roue compresseur. Il s’agit du décalage turbo ou turbo lag. Celui-ci a pour origine principale l’existence d’un couple de frottement parasite au sein de la butée. En ce qu’il pénalise les performances du turbo et limite le confort de conduite, la réduction du turbo lag constitue un enjeu majeur de l’industrie des turbocompresseurs automobiles. En tant que phénomène présent à chaque instant du fonctionnement du véhicule, les pulsations moteurs constituent également un axe de recherche primordial. Celles-ci proviennent des ouvertures et fermetures successives des soupapes des cylindres et résultent en d’importantes variations de la charge axiale appliquée à la butée du turbocompresseur. Or le dimensionnement actuel de la butée se basant sur l’étude stationnaire des cas critiques de la vie réelle du moteur, l’influence de ces pulsations sur le comportement de la butée doit être déterminée. Ce manuscrit présente une modélisation thermohydrodynamique du contact de la butée appliquée au cas des turbocompresseurs. Une équation de Reynolds modifiée est établie et intègre le modèle Modifié de Phan-Thien et Tanner. Elle relie les caractéristiques rhéologiques des huiles de moteurs actuelles au comportement macro-moléculaire des additifs à longues chaînes de polymères qu’elles contiennent. La nécessité de considérer les effets inertiels du fluide ainsi que la recirculation inter-patin est démontrée. L’influence de l’élasticité du lubrifiant sur la dissipation d’énergie au sein du contact est analysée numériquement. Il est montré qu’un compromis sur l’élasticité du lubrifiant peut mener à une réduction du turbo lag. De plus, un banc d’essai est développé en régime transitoire afin de mettre en évidence l’influence des pulsations moteurs sur les performances de la butée. Les résultats obtenus expérimentalement corroborent les effets dynamiques observés par les prédictions numériques.</subfield>
+  </datafield>
+  <datafield tag="330" ind1=" " ind2=" ">
+    <subfield code="a">With increasing focus on downsizing, high performances, low fuel consumption and emission reduction of modern vehicles, turbochargers of combustion engines have become more and more innovative and technological. Leader in this field, Honeywell Turbo Technologies is interested in two major lines of research regarding lubricated contacts. A delay in response time is frequently observed between the gas pedal push and the pressure rise of ambient air at the compressor wheel. It is called turbo lag. This phenomenon is mainly induced by a parasitic frictional torque existing in the thrust bearing contact. Penalizing turbochargers performances and drivability, the reduction of turbo lag constitutes a major concern for the automotive turbocharger industry. As an event constantly occurring on working engines, exhaust gas pulsations represent an essential line of research. Due to successive openings and closings of engine valves, these pulsations result in significant axial load variations applied to the turbocharger thrust bearing. Current sizing of thrust bearing design resting on steady state studies of critical on-engine cases, the influence of exhaust gas pulsations on the thrust bearing behavior needs to be determined. This thesis presents a thermohydrodynamic model of the thrust bearing contact applied to turbochargers. A Modified Reynolds equation is established and uses the Modified Phan-Thien and Tanner model. It connects rheological characteristics of current engine oils to the behavior of long polymeric chain additives they contain. The necessity for fluid inertia and oil recirculation to be considered is demonstrated. The influence of oil elasticity on energy dissipation within the contact is numerically analyzed. A compromise on the extent of oil elasticity can lead to a turbo lag reduction. In addition, a thrust bearing rig is developed to highlight the influence of exhaust gas pulsations on thrust bearing performances. Experimental results support dynamic effects predicted by simulations.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Configuration requise : un logiciel capable de lire un fichier au format : PDF</subfield>
+  </datafield>
+  <datafield tag="541" ind1="|" ind2=" ">
+    <subfield code="a">Characteristics of a turbocharger thrust bearing</subfield>
+    <subfield code="e">Numerical and experimental approaches</subfield>
+    <subfield code="z">eng</subfield>
+  </datafield>
+  <datafield tag="606" ind1=" " ind2=" ">
+    <subfield code="3">033513392</subfield>
+    <subfield code="a">Automobiles</subfield>
+    <subfield code="x">Moteurs</subfield>
+    <subfield code="x">Lubrification</subfield>
+    <subfield code="2">rameau</subfield>
+  </datafield>
+  <datafield tag="606" ind1=" " ind2=" ">
+    <subfield code="3">027756173</subfield>
+    <subfield code="a">Moteurs thermiques</subfield>
+    <subfield code="2">rameau</subfield>
+  </datafield>
+  <datafield tag="606" ind1=" " ind2=" ">
+    <subfield code="3">032400144</subfield>
+    <subfield code="a">Lubrification hydrodynamique</subfield>
+    <subfield code="2">rameau</subfield>
+  </datafield>
+  <datafield tag="606" ind1=" " ind2=" ">
+    <subfield code="3">175829942</subfield>
+    <subfield code="a">Butées hydrodynamiques</subfield>
+    <subfield code="2">rameau</subfield>
+  </datafield>
+  <datafield tag="608" ind1=" " ind2=" ">
+    <subfield code="3">027253139</subfield>
+    <subfield code="a">Thèses et écrits académiques</subfield>
+    <subfield code="2">rameau</subfield>
+  </datafield>
+  <datafield tag="610" ind1="0" ind2=" ">
+    <subfield code="a">Turbo compresseur</subfield>
+  </datafield>
+  <datafield tag="610" ind1="0" ind2=" ">
+    <subfield code="a">Mécanique</subfield>
+  </datafield>
+  <datafield tag="610" ind1="0" ind2=" ">
+    <subfield code="a">Rhéologie</subfield>
+  </datafield>
+  <datafield tag="610" ind1="0" ind2=" ">
+    <subfield code="a">Butée</subfield>
+  </datafield>
+  <datafield tag="610" ind1="0" ind2=" ">
+    <subfield code="a">Lubrification</subfield>
+  </datafield>
+  <datafield tag="610" ind1="0" ind2=" ">
+    <subfield code="a">Viscoélasticité</subfield>
+  </datafield>
+  <datafield tag="610" ind1="0" ind2=" ">
+    <subfield code="a">Pulsation</subfield>
+  </datafield>
+  <datafield tag="676" ind1=" " ind2=" ">
+    <subfield code="a">621.400 72</subfield>
+  </datafield>
+  <datafield tag="686" ind1=" " ind2=" ">
+    <subfield code="a">620</subfield>
+    <subfield code="2">TEF</subfield>
+  </datafield>
+  <datafield tag="700" ind1=" " ind2="1">
+    <subfield code="3">193724251</subfield>
+    <subfield code="a">Remy</subfield>
+    <subfield code="b">Benoit</subfield>
+    <subfield code="f">1989-....</subfield>
+    <subfield code="4">070</subfield>
+  </datafield>
+  <datafield tag="701" ind1=" " ind2="1">
+    <subfield code="3">084629258</subfield>
+    <subfield code="a">Bou-Saïd</subfield>
+    <subfield code="b">Benyebka</subfield>
+    <subfield code="4">727</subfield>
+    <subfield code="4">555</subfield>
+  </datafield>
+  <datafield tag="711" ind1="0" ind2="2">
+    <subfield code="3">052444724</subfield>
+    <subfield code="a">Institut national des sciences appliquées de Lyon</subfield>
+    <subfield code="c">Lyon</subfield>
+    <subfield code="4">295</subfield>
+  </datafield>
+  <datafield tag="711" ind1="0" ind2="2">
+    <subfield code="3">149942109</subfield>
+    <subfield code="a">Ecole Doctorale Mecanique, Energetique, Genie Civil, Acoustique (MEGA)</subfield>
+    <subfield code="c">Villeurbanne</subfield>
+    <subfield code="4">996</subfield>
+  </datafield>
+  <datafield tag="711" ind1="0" ind2="2">
+    <subfield code="3">149703015</subfield>
+    <subfield code="a">LaMCoS - Laboratoire de Mécanique des Contacts et des Structures, UMR 5259</subfield>
+    <subfield code="c">Lyon, INSA</subfield>
+    <subfield code="4">981</subfield>
+  </datafield>
+  <datafield tag="801" ind1=" " ind2="3">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">Abes</subfield>
+    <subfield code="c">20200308</subfield>
+    <subfield code="g">AFNOR</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2=" ">
+    <subfield code="a">Réforme Rameau Genre-Forme retro thèses (ne pas supprimer)</subfield>
+  </datafield>
+  <datafield tag="930" ind1=" " ind2=" ">
+    <subfield code="5">692669901:586447830</subfield>
+    <subfield code="b">692669901</subfield>
+    <subfield code="j">g</subfield>
+  </datafield>
+  <datafield tag="940" ind1=" " ind2=" ">
+    <subfield code="5">692669901:586447830</subfield>
+    <subfield code="a">20170707</subfield>
+    <subfield code="b">x</subfield>
+  </datafield>
+  <datafield tag="941" ind1=" " ind2=" ">
+    <subfield code="5">692669901:586447830</subfield>
+    <subfield code="a">20170707</subfield>
+    <subfield code="b">15:32:30.000</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="5">692669901:586447830</subfield>
+    <subfield code="a">exemplaire créé automatiquement par STAR</subfield>
+  </datafield>
+</record>

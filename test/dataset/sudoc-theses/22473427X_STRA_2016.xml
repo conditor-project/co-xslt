@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record>
+  <leader>     clm0 22        450 </leader>
+  <controlfield tag="001">22473427X</controlfield>
+  <controlfield tag="002">63</controlfield>
+  <controlfield tag="003">http://www.sudoc.fr/22473427X</controlfield>
+  <controlfield tag="004">20180306</controlfield>
+  <controlfield tag="005">20200224101030.000</controlfield>
+  <controlfield tag="006">4001</controlfield>
+  <controlfield tag="007">4001</controlfield>
+  <controlfield tag="008">Oax3</controlfield>
+  <datafield tag="029" ind1=" " ind2=" ">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">2016STRAE045</subfield>
+  </datafield>
+  <datafield tag="033" ind1=" " ind2=" ">
+    <subfield code="a">http://www.theses.fr/2016STRAE045</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">STAR78449</subfield>
+  </datafield>
+  <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">20180306d2016    k  y0frey50      ba</subfield>
+  </datafield>
+  <datafield tag="101" ind1="0" ind2=" ">
+    <subfield code="a">eng</subfield>
+    <subfield code="d">fre</subfield>
+    <subfield code="d">eng</subfield>
+  </datafield>
+  <datafield tag="102" ind1=" " ind2=" ">
+    <subfield code="a">FR</subfield>
+  </datafield>
+  <datafield tag="105" ind1=" " ind2=" ">
+    <subfield code="a">y   ma  00|yy</subfield>
+  </datafield>
+  <datafield tag="135" ind1=" " ind2=" ">
+    <subfield code="a">dr|||||||||||</subfield>
+  </datafield>
+  <datafield tag="181" ind1=" " ind2=" ">
+    <subfield code="6">z01</subfield>
+    <subfield code="c">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="181" ind1=" " ind2="1">
+    <subfield code="6">z01</subfield>
+    <subfield code="a">i#</subfield>
+    <subfield code="b">xxxe##</subfield>
+  </datafield>
+  <datafield tag="182" ind1=" " ind2=" ">
+    <subfield code="6">z01</subfield>
+    <subfield code="c">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="182" ind1=" " ind2="1">
+    <subfield code="6">z01</subfield>
+    <subfield code="a">b</subfield>
+  </datafield>
+  <datafield tag="183" ind1=" " ind2="1">
+    <subfield code="6">z01</subfield>
+    <subfield code="a">ceb</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="200" ind1="1" ind2=" ">
+    <subfield code="a">Bio-inspired self-construction and self-assembly of organic films triggered by electrochemistry</subfield>
+    <subfield code="f">Clément Maerten</subfield>
+    <subfield code="g">sous la direction de Fouzia Boulmedais</subfield>
+  </datafield>
+  <datafield tag="214" ind1=" " ind2="1">
+    <subfield code="d">2018</subfield>
+  </datafield>
+  <datafield tag="230" ind1=" " ind2=" ">
+    <subfield code="a">Données textuelles</subfield>
+  </datafield>
+  <datafield tag="304" ind1=" " ind2=" ">
+    <subfield code="a">Titre provenant de l&apos;écran-titre</subfield>
+  </datafield>
+  <datafield tag="310" ind1=" " ind2=" ">
+    <subfield code="a">Thèse confidentielle jusqu&apos;au 01 octobre 2019. Thèse soumise à l&apos;embargo de l&apos;auteur jusqu&apos;au 01 octobre 2019</subfield>
+  </datafield>
+  <datafield tag="314" ind1=" " ind2=" ">
+    <subfield code="a">Ecole(s) Doctorale(s) : École doctorale Physique et chimie-physique (Strasbourg ; 1994-....)</subfield>
+  </datafield>
+  <datafield tag="314" ind1=" " ind2=" ">
+    <subfield code="a">Partenaire(s) de recherche : Institut Charles Sadron (Strasbourg) (Laboratoire)</subfield>
+  </datafield>
+  <datafield tag="314" ind1=" " ind2=" ">
+    <subfield code="a">Autre(s) contribution(s) : Vincent Roucoules (Président du jury) ; Patrice Woisel, Boris Lakard (Rapporteur(s))</subfield>
+  </datafield>
+  <datafield tag="328" ind1=" " ind2="0">
+    <subfield code="b">Thèse de doctorat</subfield>
+    <subfield code="c">Chimie physique</subfield>
+    <subfield code="e">Strasbourg</subfield>
+    <subfield code="d">2016</subfield>
+  </datafield>
+  <datafield tag="330" ind1=" " ind2=" ">
+    <subfield code="a">Les architectures moléculaires qui se forment exclusivement sur une surface sont encore rares. L’électrodéposition est un procédé exploitant des « signaux » électriques afin de déclencher et contrôler l’assemblage de films. Récemment, une nouvelle méthode : l’autoconstruction de films en « une étape » par l’utilisation d’un morphogène (un gradient de catalyseur généré depuis une électrode), a attiré l’attention de la communauté scientifique. En effet, elle permet l’auto-assemblage rapide de films polymériques robustes. Cependant, cette technique était limitée à des systèmes basés sur la chimie click du Cu (I). Le but de ce travail était d’étendre cette stratégie à d’autres systèmes en utilisant une approche bio-inspirée. Le concept du morphogène a été appliqué pour développer deux nouveaux systèmes d’autoconstruction déclenchées par électrochimie. Le premier système est basé sur l’autoconstruction covalente de films polymériques induite par l’oxydation d’une molécule organique, inspirée de la moule. Le deuxième est basé sur l’auto-assemblage de films de polyphénols par électro-assemblage par liaisons de coordinations. Enfin, nous avons appliqué ces deux concepts pour immobiliser électrochimiquement une enzyme sur une électrode afin de créer un biosenseur.</subfield>
+  </datafield>
+  <datafield tag="330" ind1=" " ind2=" ">
+    <subfield code="a">Molecular architectures that spontaneously grow exclusively near a surface are rare. Electrodeposition is a process in which imposed electrical « signals » are employed to direct the assembly of thin films. Recently, a new method based on the one-pot self-construction of films by means of a morphogen (a catalyst gradient generated from a surface) has attracted attention since it allows the quick self-assembly of robust films. Nevertheless, this technique was quite limited to systems based on click chemistry.The purpose of this work was to extend this strategy to other systems using a bio-inspired approach. The one-pot morphogen concept was applied to design two new electro-triggered self-construction concepts. The first one is based on the self-construction of covalent polymer films triggered by mussel-inspired molecule oxidation. The second one is based on the electro-self-assembly of polyphenols films based on ionic bonds coordination. Finally, we tried to apply these concepts in order to electrochemically immobilize an enzyme on an electrode to create a biosensor.</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Configuration requise : un logiciel capable de lire un fichier au format : application/pdf</subfield>
+  </datafield>
+  <datafield tag="541" ind1="|" ind2=" ">
+    <subfield code="a">Auto-construction et auto-assemblage bio-inspirés de films organiques par électrochimie</subfield>
+    <subfield code="z">fre</subfield>
+  </datafield>
+  <datafield tag="606" ind1=" " ind2=" ">
+    <subfield code="3">027282295</subfield>
+    <subfield code="a">Couches minces</subfield>
+    <subfield code="2">rameau</subfield>
+  </datafield>
+  <datafield tag="606" ind1=" " ind2=" ">
+    <subfield code="3">031358330</subfield>
+    <subfield code="a">Polymères biomimétiques</subfield>
+    <subfield code="2">rameau</subfield>
+  </datafield>
+  <datafield tag="606" ind1=" " ind2=" ">
+    <subfield code="3">035423706</subfield>
+    <subfield code="a">Électrodes à enzymes</subfield>
+    <subfield code="2">rameau</subfield>
+  </datafield>
+  <datafield tag="606" ind1=" " ind2=" ">
+    <subfield code="3">027754804</subfield>
+    <subfield code="a">Adhésion (physique)</subfield>
+    <subfield code="2">rameau</subfield>
+  </datafield>
+  <datafield tag="606" ind1=" " ind2=" ">
+    <subfield code="3">027225194</subfield>
+    <subfield code="a">Électrochimie</subfield>
+    <subfield code="2">rameau</subfield>
+  </datafield>
+  <datafield tag="608" ind1=" " ind2=" ">
+    <subfield code="3">027253139</subfield>
+    <subfield code="a">Thèses et écrits académiques</subfield>
+    <subfield code="2">rameau</subfield>
+  </datafield>
+  <datafield tag="610" ind1="0" ind2=" ">
+    <subfield code="a">Polymère</subfield>
+  </datafield>
+  <datafield tag="610" ind1="0" ind2=" ">
+    <subfield code="a">Électrodéposition</subfield>
+  </datafield>
+  <datafield tag="610" ind1="0" ind2=" ">
+    <subfield code="a">Enzyme</subfield>
+  </datafield>
+  <datafield tag="610" ind1="0" ind2=" ">
+    <subfield code="a">Catéchol</subfield>
+  </datafield>
+  <datafield tag="610" ind1="0" ind2=" ">
+    <subfield code="a">Polyphénol</subfield>
+  </datafield>
+  <datafield tag="610" ind1="0" ind2=" ">
+    <subfield code="a">Chimie de surface</subfield>
+  </datafield>
+  <datafield tag="610" ind1="0" ind2=" ">
+    <subfield code="a">Fonctionnalisation</subfield>
+  </datafield>
+  <datafield tag="676" ind1=" " ind2=" ">
+    <subfield code="a">547.1</subfield>
+  </datafield>
+  <datafield tag="686" ind1=" " ind2=" ">
+    <subfield code="a">540</subfield>
+    <subfield code="2">TEF</subfield>
+  </datafield>
+  <datafield tag="700" ind1=" " ind2="1">
+    <subfield code="3">20132377X</subfield>
+    <subfield code="a">Maerten</subfield>
+    <subfield code="b">Clément</subfield>
+    <subfield code="f">1990-....</subfield>
+    <subfield code="4">070</subfield>
+  </datafield>
+  <datafield tag="701" ind1=" " ind2="1">
+    <subfield code="3">083787895</subfield>
+    <subfield code="a">Boulmedais</subfield>
+    <subfield code="b">Fouzia</subfield>
+    <subfield code="f">1976-....</subfield>
+    <subfield code="4">727</subfield>
+  </datafield>
+  <datafield tag="701" ind1=" " ind2="1">
+    <subfield code="3">069554587</subfield>
+    <subfield code="a">Roucoules</subfield>
+    <subfield code="b">Vincent</subfield>
+    <subfield code="f">1971-....</subfield>
+    <subfield code="4">956</subfield>
+  </datafield>
+  <datafield tag="701" ind1=" " ind2="1">
+    <subfield code="3">117933848</subfield>
+    <subfield code="a">Woisel</subfield>
+    <subfield code="b">Patrice</subfield>
+    <subfield code="4">958</subfield>
+  </datafield>
+  <datafield tag="701" ind1=" " ind2="1">
+    <subfield code="3">074143468</subfield>
+    <subfield code="a">Lakard</subfield>
+    <subfield code="b">Boris</subfield>
+    <subfield code="f">1976-...</subfield>
+    <subfield code="4">958</subfield>
+  </datafield>
+  <datafield tag="702" ind1=" " ind2="1">
+    <subfield code="3">083787895</subfield>
+    <subfield code="a">Boulmedais</subfield>
+    <subfield code="b">Fouzia</subfield>
+    <subfield code="f">1976-....</subfield>
+    <subfield code="4">727</subfield>
+  </datafield>
+  <datafield tag="702" ind1=" " ind2="1">
+    <subfield code="3">069554587</subfield>
+    <subfield code="a">Roucoules</subfield>
+    <subfield code="b">Vincent</subfield>
+    <subfield code="f">1971-....</subfield>
+    <subfield code="4">956</subfield>
+  </datafield>
+  <datafield tag="702" ind1=" " ind2="1">
+    <subfield code="3">117933848</subfield>
+    <subfield code="a">Woisel</subfield>
+    <subfield code="b">Patrice</subfield>
+    <subfield code="4">958</subfield>
+  </datafield>
+  <datafield tag="702" ind1=" " ind2="1">
+    <subfield code="3">074143468</subfield>
+    <subfield code="a">Lakard</subfield>
+    <subfield code="b">Boris</subfield>
+    <subfield code="f">1976-...</subfield>
+    <subfield code="4">958</subfield>
+  </datafield>
+  <datafield tag="711" ind1="0" ind2="2">
+    <subfield code="3">131056549</subfield>
+    <subfield code="a">Université de Strasbourg</subfield>
+    <subfield code="c">2009-....</subfield>
+    <subfield code="4">295</subfield>
+  </datafield>
+  <datafield tag="711" ind1="0" ind2="2">
+    <subfield code="3">156500019</subfield>
+    <subfield code="a">École doctorale Physique et chimie-physique</subfield>
+    <subfield code="c">Strasbourg</subfield>
+    <subfield code="c">1994-....</subfield>
+    <subfield code="4">996</subfield>
+  </datafield>
+  <datafield tag="711" ind1="0" ind2="2">
+    <subfield code="3">156774062</subfield>
+    <subfield code="a">Institut Charles Sadron</subfield>
+    <subfield code="c">Strasbourg</subfield>
+    <subfield code="4">981</subfield>
+  </datafield>
+  <datafield tag="712" ind1="0" ind2="2">
+    <subfield code="3">131056549</subfield>
+    <subfield code="a">Université de Strasbourg</subfield>
+    <subfield code="c">2009-....</subfield>
+    <subfield code="4">295</subfield>
+  </datafield>
+  <datafield tag="712" ind1="0" ind2="2">
+    <subfield code="3">156500019</subfield>
+    <subfield code="a">École doctorale Physique et chimie-physique</subfield>
+    <subfield code="c">Strasbourg</subfield>
+    <subfield code="c">1994-....</subfield>
+    <subfield code="4">996</subfield>
+  </datafield>
+  <datafield tag="712" ind1="0" ind2="2">
+    <subfield code="3">156774062</subfield>
+    <subfield code="a">Institut Charles Sadron</subfield>
+    <subfield code="c">Strasbourg</subfield>
+    <subfield code="4">981</subfield>
+  </datafield>
+  <datafield tag="801" ind1=" " ind2="3">
+    <subfield code="a">FR</subfield>
+    <subfield code="b">Abes</subfield>
+    <subfield code="c">20200224</subfield>
+    <subfield code="g">AFNOR</subfield>
+  </datafield>
+  <datafield tag="930" ind1=" " ind2=" ">
+    <subfield code="5">674829902:604177542</subfield>
+    <subfield code="b">674829902</subfield>
+    <subfield code="j">g</subfield>
+  </datafield>
+  <datafield tag="940" ind1=" " ind2=" ">
+    <subfield code="5">674829902:604177542</subfield>
+    <subfield code="a">20180306</subfield>
+    <subfield code="b">x</subfield>
+  </datafield>
+  <datafield tag="941" ind1=" " ind2=" ">
+    <subfield code="5">674829902:604177542</subfield>
+    <subfield code="a">20180306</subfield>
+    <subfield code="b">16:17:14.000</subfield>
+  </datafield>
+  <datafield tag="991" ind1=" " ind2=" ">
+    <subfield code="5">674829902:604177542</subfield>
+    <subfield code="a">exemplaire créé automatiquement par STAR</subfield>
+  </datafield>
+</record>

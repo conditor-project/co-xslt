@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+
+<crossref xmlns="http://www.crossref.org/xschema/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.crossref.org/xschema/1.1 http://doi.crossref.org/schemas/unixref1.1.xsd">
+            <journal>
+              <journal_metadata language="en">
+                <full_title>JAMA</full_title>
+                <abbrev_title>JAMA</abbrev_title>
+                <issn media_type="print">0098-7484</issn>
+              </journal_metadata>
+              <journal_issue>
+                <publication_date media_type="print">
+                  <month>03</month>
+                  <day>05</day>
+                  <year>2014</year>
+                </publication_date>
+                <journal_volume>
+                  <volume>311</volume>
+                </journal_volume>
+                <issue>9</issue>
+              </journal_issue>
+              <journal_article publication_type="full_text">
+                <titles>
+                  <title>Associations of Housing Mobility Interventions for Children in High-Poverty Neighborhoods With Subsequent Mental Disorders During Adolescence</title>
+                </titles>
+                <contributors>
+                  <person_name sequence="first" contributor_role="author">
+                    <given_name>Ronald C.</given_name>
+                    <surname>Kessler</surname>
+                    <affiliation>Department of Health Care Policy, Harvard Medical School, Boston, Massachusetts</affiliation>
+                  </person_name>
+                  <person_name sequence="additional" contributor_role="author">
+                    <given_name>Greg J.</given_name>
+                    <surname>Duncan</surname>
+                    <affiliation>School of Education, University of California Irvine, Irvine</affiliation>
+                  </person_name>
+                  <person_name sequence="additional" contributor_role="author">
+                    <given_name>Lisa A.</given_name>
+                    <surname>Gennetian</surname>
+                    <affiliation>National Bureau of Economic Research, Cambridge, Massachusetts</affiliation>
+                  </person_name>
+                  <person_name sequence="additional" contributor_role="author">
+                    <given_name>Lawrence F.</given_name>
+                    <surname>Katz</surname>
+                    <affiliation>National Bureau of Economic Research, Cambridge, Massachusetts4Department of Economics, Harvard University, Cambridge, Massachusetts</affiliation>
+                  </person_name>
+                  <person_name sequence="additional" contributor_role="author">
+                    <given_name>Jeffrey R.</given_name>
+                    <surname>Kling</surname>
+                    <affiliation>National Bureau of Economic Research, Cambridge, Massachusetts5Congressional Budget Office, Washington, DC</affiliation>
+                  </person_name>
+                  <person_name sequence="additional" contributor_role="author">
+                    <given_name>Nancy A.</given_name>
+                    <surname>Sampson</surname>
+                    <affiliation>Department of Health Care Policy, Harvard Medical School, Boston, Massachusetts</affiliation>
+                  </person_name>
+                  <person_name sequence="additional" contributor_role="author">
+                    <given_name>Lisa</given_name>
+                    <surname>Sanbonmatsu</surname>
+                    <affiliation>National Bureau of Economic Research, Cambridge, Massachusetts</affiliation>
+                  </person_name>
+                  <person_name sequence="additional" contributor_role="author">
+                    <given_name>Alan M.</given_name>
+                    <surname>Zaslavsky</surname>
+                    <affiliation>Department of Health Care Policy, Harvard Medical School, Boston, Massachusetts</affiliation>
+                  </person_name>
+                  <person_name sequence="additional" contributor_role="author">
+                    <given_name>Jens</given_name>
+                    <surname>Ludwig</surname>
+                    <affiliation>National Bureau of Economic Research, Cambridge, Massachusetts6Harris School of Public Policy, University of Chicago, Chicago, Illinois</affiliation>
+                  </person_name>
+                </contributors>
+                <publication_date media_type="print">
+                  <month>03</month>
+                  <day>05</day>
+                  <year>2014</year>
+                </publication_date>
+                <pages>
+                  <first_page>937</first_page>
+                </pages>
+                <doi_data>
+                  <doi>10.1001/jama.2014.607</doi>
+                  <resource>http://jama.jamanetwork.com/article.aspx?doi=10.1001/jama.2014.607</resource>
+                  <collection property="crawler-based">
+                    <item crawler="iParadigms">
+                      <resource>http://jamanetwork.com/journals/jama/fullarticle/1835504</resource>
+                    </item>
+                  </collection>
+                </doi_data>
+                <component_list/>
+              </journal_article>
+            </journal>
+          </crossref>

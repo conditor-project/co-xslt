@@ -33,6 +33,13 @@ Ajouter les données suivantes :
 }
 ```
 
+Note : Une propriété __today__ avec la date du jour est automatiquement ajoutée à la configuration du module.
+Il est donc possible d'utiliser ce paramètre dans la feuille xslt de cette manière :
+
+```xml
+<xsl:param name="today"/>
+```
+
 ## Fonctionnement
 
 ### Structure d'entrée

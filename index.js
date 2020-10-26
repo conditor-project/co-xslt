@@ -4,29 +4,30 @@ const fse = require('fs-extra');
 const path = require('path');
 const Computron = require('computron');
 const { getStylesheetFrom } = require('tei-conditor');
-const utils = require('li-utils');
 Promise.promisifyAll(Computron.prototype);
 
 const coXslt = {};
 
 coXslt.doTheJob = function (docObject, next) {
   
-  const originalXmlFile = utils.files.get(docObject.metadata, {
+  const originalXmlFile = this.getIstexFile(docObject.metadata, {
     mime: 'application/xml',
     original: true
   });
   
   if (!originalXmlFile) return next(new Error('no xml original file found in metadata array.'));
   const originalXmlPath = originalXmlFile.path;
-  const filename = path.basename(originalXmlPath, '.xml');
   if (!docObject.idIstex) return next(new Error('docObject has no idIstex.'));
   if (!docObject.corpusOutput) return next(new Error('docObject has no corpusOutput.'));
   const upperCaseIdIstex = docObject.idIstex.toUpperCase();
   const teiDocDirectory = path.join(docObject.corpusOutput,upperCaseIdIstex[0],upperCaseIdIstex[1],upperCaseIdIstex[2],upperCaseIdIstex, 'metadata');
   const teiDocPath = path.join(teiDocDirectory, `${upperCaseIdIstex}.tei.xml`);
   const transformer = new Computron();
+  let source = (docObject.source) ? docObject.source : undefined;
+  if (!source && docObject.cartoType.startsWith("conditor:")) source = docObject.cartoType.substring(9);
+  console.log("source = "+source);
   fse.ensureDir(teiDocDirectory)
-    .then(() => getStylesheetFrom(docObject.source))
+    .then(() => getStylesheetFrom(source))
     .then(stylesheets => {
       if (stylesheets.length === 0) return Promise.reject(new Error(`no stylesheet founded for ${docObject.source}`));
       // FIXME : waiting a single xsl stylesheet for pubmed
@@ -71,5 +72,28 @@ function today() {
   }
   return yyyy+'/'+mm+'/'+dd;
 }
+
+ 
+/**
+ * Retourne le premier objet du Tableau de fichier respectant tous les critères spécifiées
+ * Exemple : Je souhaite récupérer le fichier txt généré par LoadIstex
+ *   files = docObject.fulltext (paramètre du docObject contenant les infos liées au fulltext)
+ *   criteria = { mime: 'text/plain', original: false }, --> ficher txt généré par LoadIstex
+ * @param {array} files Tableau d'objet représentant un ensemble de fichier (ex : jsonLine.metadata || jsonLine.fulltext)
+ * @param {object} criteria Objet regroupant les critères du document recherché
+ * @return {object} L'objet correspondant ou null
+ */
+coXslt.getIstexFile = function(files, criteria) {
+  var keys = Object.keys(criteria);
+  for (var i = 0; i < files.length; i++) {
+    var found = true;
+    for (var j = 0; j < keys.length; j++) {
+      found &= (criteria[keys[j]] instanceof RegExp) ? criteria[keys[j]].test(files[i][keys[j]]) : (files[i][keys[j]] === criteria[keys[j]]);
+      if (!found) break;
+    }
+    if (found) return files[i];
+  }
+  return null;
+};
 
 module.exports = coXslt;

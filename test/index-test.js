@@ -10,7 +10,6 @@ const sha1 = require("sha1");
 const path = require("path");
 const pkg = require("../package.json");
 const coXslt = require("..");
-const utils = require('li-utils');
 const expect = require("chai").expect;
 
 const SegfaultHandler = require("segfault-handler");
@@ -75,7 +74,7 @@ describe(pkg.name + "/index.js", function () {
                   return done(error);
                 }
 
-                const teiFile = utils.files.get(docObject.metadata, {
+                const teiFile = coXslt.getIstexFile(docObject.metadata, {
                   mime: 'application/tei+xml',
                   original: false
                 });

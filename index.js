@@ -2,6 +2,7 @@
 const Promise = require('bluebird');
 const fse = require('fs-extra');
 const path = require('path');
+const fs = require('fs');
 const Computron = require('computron');
 const { getStylesheetFrom } = require('tei-conditor');
 Promise.promisifyAll(Computron.prototype);
@@ -9,23 +10,39 @@ Promise.promisifyAll(Computron.prototype);
 const coXslt = {};
 
 coXslt.doTheJob = function (docObject, next) {
-  
+  if (!docObject.metadata || docObject.metadata===0) {
+    docObject.error = {code:15,message:'At least one metadata file should be present.'};
+    return next(docObject.error);
+  }
+
   const originalXmlFile = this.getIstexFile(docObject.metadata, {
     mime: 'application/xml',
     original: true
   });
   
-  if (!originalXmlFile) return next(new Error('no xml original file found in metadata array.'));
+  if (!originalXmlFile) {
+    docObject.error = {code:14,message:'no xml original file found in metadata array.'};
+    return next(docObject.error);
+  }
   const originalXmlPath = originalXmlFile.path;
-  if (!docObject.idIstex) return next(new Error('docObject has no idIstex.'));
-  if (!docObject.corpusOutput) return next(new Error('docObject has no corpusOutput.'));
+  if (fs.statSync(originalXmlPath).size <=0) {
+    docObject.error = {code:11,message:'input file '+ originalXmlPath +'is empty'};
+    return next(docObject.error);
+  }
+  if (!docObject.idIstex) {
+    docObject.error = {code:12,message:'docObject has no idIstex.'};
+    return next(docObject.error);
+  }
+  if (!docObject.corpusOutput) {
+    docObject.error = {code:13,message:'docObject has no corpusOutput.'};
+    return next(docObject.error);
+  }
   const upperCaseIdIstex = docObject.idIstex.toUpperCase();
   const teiDocDirectory = path.join(docObject.corpusOutput,upperCaseIdIstex[0],upperCaseIdIstex[1],upperCaseIdIstex[2],upperCaseIdIstex, 'metadata');
   const teiDocPath = path.join(teiDocDirectory, `${upperCaseIdIstex}.tei.xml`);
   const transformer = new Computron();
   let source = (docObject.source) ? docObject.source : undefined;
   if (!source && docObject.cartoType.startsWith("conditor:")) source = docObject.cartoType.substring(9);
-  console.log("source = "+source);
   fse.ensureDir(teiDocDirectory)
     .then(() => getStylesheetFrom(source))
     .then(stylesheets => {
@@ -52,8 +69,8 @@ coXslt.doTheJob = function (docObject, next) {
       next(null, docObject);
     })
     .catch(error => {
-      docObject.error = error;
-      next(error);
+      docObject.error = {code:10,message:error.message};
+      next({code:10,message:error.message});
     });
 };
 

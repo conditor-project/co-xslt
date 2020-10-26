@@ -6,10 +6,11 @@
 /* eslint-env mocha */
 /* eslint-disable no-unused-expressions */
 const fs = require("fs");
+const sha1 = require("sha1");
 const path = require("path");
 const pkg = require("../package.json");
 const coXslt = require("..");
-const async = require("async");
+const utils = require('li-utils');
 const expect = require("chai").expect;
 
 const SegfaultHandler = require("segfault-handler");
@@ -17,15 +18,18 @@ SegfaultHandler.registerHandler("crash.log");
 
 function buildDocObject(source, originDocPath, corpusRoot) {
   return {
-    corpusRoot: corpusRoot,
-    ingest: {
-      path: "no.zip",
-      type: "zip",
-      sessionName: "TEST-11223344"
-    },
+    idIstex: sha1(originDocPath).toUpperCase(),
     source: source,
-    id: 666,
-    originDocPath: originDocPath,
+    corpusRoot: corpusRoot,
+    corpusName: "test",
+    cartoType: "conditor",
+    corpusOutput: path.resolve(__dirname, "corpusOutput"),
+    metadata: [{
+      path: originDocPath,
+      mime: "application/xml",
+      original: true
+    }],
+    fulltext: [],
     sessionName: "NO-ID"
   };
 }
@@ -62,7 +66,7 @@ describe(pkg.name + "/index.js", function () {
         for (let i = 0; i < docObjects[source].length; i++) {
           it(
             "test on " +
-              docObjects[source][i].originDocPath.substring(docObjects[source][i].corpusRoot.length + 1) +
+              docObjects[source][i].metadata[0].path.substring(docObjects[source][i].corpusRoot.length + 1) +
               " should pass",
             function (done) {
               coXslt.doTheJob(docObjects[source][i], function (error, docObject) {
@@ -70,10 +74,21 @@ describe(pkg.name + "/index.js", function () {
                   console.log(error);
                   return done(error);
                 }
-                expect(docObject).to.have.own.property("teiDocPath");
-                const teiExists = fs.existsSync(docObject.teiDocPath);
+
+                const teiFile = utils.files.get(docObject.metadata, {
+                  mime: 'application/tei+xml',
+                  original: false
+                });
+              
+
+                expect(teiFile).to.be.not.null;
+                expect(teiFile).to.be.an("object");
+                expect(teiFile.path.endsWith("tei.xml")).to.be.true;
+                expect(teiFile.mime).to.be.equal("application/tei+xml");
+                expect(teiFile.original).to.be.false;
+                const teiExists = fs.existsSync(teiFile.path);
                 expect(teiExists).to.be.true;
-                if (fs.statSync(docObject.teiDocPath).isFile()) fs.unlinkSync(docObject.teiDocPath);
+               if (fs.statSync(teiFile.path).isFile()) fs.unlinkSync(teiFile.path);
                 return done();
               });
             }

@@ -21,11 +21,13 @@
     "computron": "^1.1.6",
     "fs-extra": "^9.0.1",
     "segfault-handler": "^1.3.0",
-    "tei-conditor": "../../../tei-conditor"
+    "tei-conditor": "https://github.com/conditor-project/tei-conditor",
+    "li-utils": "git+ssh://vx-git-istex.intra.inist.fr:22222/istex/li-utils.git"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^8.1.3",
-    "nyc": "^15.1.0"
+    "nyc": "^15.1.0",
+    "sha1": "^1.1.1"
   }
 }

@@ -43,6 +43,7 @@ coXslt.doTheJob = function (docObject, next) {
   const transformer = new Computron();
   let source = (docObject.source) ? docObject.source : undefined;
   if (!source && docObject.cartoType.startsWith("conditor:")) source = docObject.cartoType.substring(9);
+  if (!docObject.source && source !== '') docObject.source = source;
   fse.ensureDir(teiDocDirectory)
     .then(() => getStylesheetFrom(source))
     .then(stylesheets => {
@@ -66,6 +67,7 @@ coXslt.doTheJob = function (docObject, next) {
         mime: "application/tei+xml",
         original: false
       });
+      docObject.path = teiDocPath;
       next(null, docObject);
     })
     .catch(error => {

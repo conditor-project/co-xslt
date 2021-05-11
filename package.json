@@ -4,7 +4,7 @@
   "description": "XSL transformation module",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha"
+    "test": "nyc mocha -t 120000"
   },
   "repository": {
     "type": "git",
@@ -16,9 +16,11 @@
   "author": "conditor-team",
   "license": "GNU",
   "dependencies": {
+    "async": "^3.2.0",
     "bluebird": "^3.7.2",
     "computron": "^1.1.11",
     "fs-extra": "^9.1.0",
+    "segfault-handler": "^1.3.0",
     "tei-conditor": "git+https://github.com/conditor-project/tei-conditor.git"
   },
   "devDependencies": {

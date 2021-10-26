@@ -74,3 +74,5 @@ typings/
 
 # Visual Studio Code
 .vscode
+
+test/dataset/*/*.xml

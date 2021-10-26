@@ -5,21 +5,50 @@ const SaxonJS = require('saxon-js');
 const { getSefFrom } = require('tei-conditor');
 
 const coXslt = {};
+
 coXslt.doTheJob = function (docObject, next) {
-  if (!docObject.hasOwnProperty('originDocPath')) return next(new Error('no originDocPath key founded'));
-  const filename = path.basename(docObject.originDocPath, '.xml');
-  const directory = path.dirname(docObject.originDocPath);
-  const teiDocDirectory = (directory[0] === '/') ? directory : path.join(__dirname, directory);
-  const teiDocPath = path.join(teiDocDirectory, `${filename}.tei`);
+  if (!docObject.metadata || docObject.metadata===0) {
+    docObject.error = {code:15,message:'At least one metadata file should be present.'};
+    return next(docObject.error);
+  }
+
+  const originalXmlFile = this.getIstexFile(docObject.metadata, {
+    mime: 'application/xml',
+    original: true
+  });
+  
+  if (!originalXmlFile) {
+    docObject.error = {code:14,message:'no xml original file found in metadata array.'};
+    return next(docObject.error);
+  }
+  const originalXmlPath = originalXmlFile.path;
+  if (fse.statSync(originalXmlPath).size <=0) {
+    docObject.error = {code:11,message:'input file '+ originalXmlPath +'is empty'};
+    return next(docObject.error);
+  }
+  if (!docObject.idIstex) {
+    docObject.error = {code:12,message:'docObject has no idIstex.'};
+    return next(docObject.error);
+  }
+  if (!docObject.corpusOutput) {
+    docObject.error = {code:13,message:'docObject has no corpusOutput.'};
+    return next(docObject.error);
+  }
+  const upperCaseIdIstex = docObject.idIstex.toUpperCase();
+  const teiDocDirectory = path.join(docObject.corpusOutput,upperCaseIdIstex[0],upperCaseIdIstex[1],upperCaseIdIstex[2],upperCaseIdIstex, 'metadata');
+  const teiDocPath = path.join(teiDocDirectory, `${upperCaseIdIstex}.tei.xml`);
+  let source = (docObject.source) ? docObject.source : undefined;
+  if (!source && docObject.cartoType.startsWith("conditor:")) source = docObject.cartoType.substring(9);
+  if (!docObject.source && source !== '') docObject.source = source;
   fse.ensureDir(teiDocDirectory)
-    .then(() => getSefFrom(docObject.source))
-    .then(stylesheets => {
+  .then(() => getSefFrom(source))
+  .then(stylesheets => {
       if (stylesheets.length === 0) return Promise.reject(new Error(`no stylesheet founded for ${docObject.source}`));
       // FIXME : waiting a single xsl stylesheet for pubmed
       // if (stylesheets.length > 1) return Promise.reject(new Error(`more than one stylesheet founded for ${docObject.source}`));
       // const stylesheet = stylesheets.pop();
       const stylesheet = stylesheets[0];
-      const originDocPath = (docObject.originDocPath[0] === '/') ? docObject.originDocPath : path.join(__dirname, docObject.originDocPath);
+      const originDocPath = (originalXmlPath[0] === '/') ? originalXmlPath : path.join(__dirname, originalXmlPath);
       let conf = typeof coXslt.config !== "undefined" ? coXslt.config : {};
       if (typeof conf.today === "undefined") conf.today = today();
       
@@ -32,13 +61,17 @@ coXslt.doTheJob = function (docObject, next) {
         fse.writeFile(teiDocPath, output.principalResult);
     })
     .then(() => {
+      docObject.metadata.push({
+        path: teiDocPath,
+        mime: "application/tei+xml",
+        original: false
+      });
       docObject.path = teiDocPath;
-      docObject.teiDocPath = teiDocPath;
       next(null, docObject);
     })
     .catch(error => {
-      docObject.error = error;
-      next(error);
+      docObject.error = {code:10,message:error.message};
+      next({code:10,message:error.message});
     });
 };
 
@@ -57,5 +90,28 @@ function today() {
   }
   return yyyy+'/'+mm+'/'+dd;
 }
+
+ 
+/**
+ * Retourne le premier objet du Tableau de fichier respectant tous les critères spécifiées
+ * Exemple : Je souhaite récupérer le fichier txt généré par LoadIstex
+ *   files = docObject.fulltext (paramètre du docObject contenant les infos liées au fulltext)
+ *   criteria = { mime: 'text/plain', original: false }, --> ficher txt généré par LoadIstex
+ * @param {array} files Tableau d'objet représentant un ensemble de fichier (ex : jsonLine.metadata || jsonLine.fulltext)
+ * @param {object} criteria Objet regroupant les critères du document recherché
+ * @return {object} L'objet correspondant ou null
+ */
+coXslt.getIstexFile = function(files, criteria) {
+  var keys = Object.keys(criteria);
+  for (var i = 0; i < files.length; i++) {
+    var found = true;
+    for (var j = 0; j < keys.length; j++) {
+      found &= (criteria[keys[j]] instanceof RegExp) ? criteria[keys[j]].test(files[i][keys[j]]) : (files[i][keys[j]] === criteria[keys[j]]);
+      if (!found) break;
+    }
+    if (found) return files[i];
+  }
+  return null;
+};
 
 module.exports = coXslt;

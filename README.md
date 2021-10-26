@@ -47,18 +47,29 @@ Il est donc possible d'utiliser ce paramètre dans la feuille xslt de cette mani
 Les champs requis dans le JSON d'entrée sont les suivants :
 
 ```json
-{
-  "originDocPath": "test/dataset/pubmed/pubmed-11748933.xml",
-}
+idIstex: ..., // l'id ISTEX a 40 caractères hexadécimaux
+corpusOutput: ..., // le répertoire dans lequel sera créé le fichier TEI
+metadata: [{
+  "path": "test/dataset/pubmed/pubmed-11748933.xml",
+  "mime": "application/xml",
+  "original": true
+}]
 ```
 
 ### Structure de sortie
 
-Un champ `teiDocPath` est créé contenant le chemin du chemin vers le fichier xml TEI.
+Un nouvel élément au tableau metadata est créé, avec comme tye mime `application/tei+xml` et comme path le chemin vers le fichier xml TEI.
 
 ```json
-{
-  "originDocPath": "test/dataset/pubmed/pubmed-11748933.xml",
-  "teiDocPath": "/home/rmeja/Dev/conditor/co-xslt/test/dataset/pubmed/pubmed-11748933.tei"
-}
+idIstex: ..., // l'id ISTEX a 40 caractères hexadécimaux
+corpusOutput: ..., // le répertoire dans lequel sera créé le fichier TEI
+metadata: [{
+  "path": "test/dataset/pubmed/pubmed-11748933.xml",
+  "mime": "application/xml",
+  "original": true
+},{
+  "path": "${corpusOutput}/A/0/F/AOF.../metadata/A0F....tei.xml",
+  "mime": "application/tei+xml",
+  "original": false
+}]
 ```

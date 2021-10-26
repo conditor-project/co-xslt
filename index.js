@@ -51,9 +51,8 @@ coXslt.doTheJob = function (docObject, next) {
       const originDocPath = (originalXmlPath[0] === '/') ? originalXmlPath : path.join(__dirname, originalXmlPath);
       let conf = typeof coXslt.config !== "undefined" ? coXslt.config : {};
       if (typeof conf.today === "undefined") conf.today = today();
-      
-      SaxonJS.transform({
-        stylesheetFileName: stylesheet,
+      return SaxonJS.transform({
+        stylesheetFileName: stylesheet.path,
         sourceFileName: originDocPath,
         destination: "serialized"
       }, "async");

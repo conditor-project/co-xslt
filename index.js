@@ -8,7 +8,7 @@ Promise.promisifyAll(Computron.prototype);
 
 const coXslt = {};
 coXslt.doTheJob = function (docObject, next) {
-  if (!docObject.hasOwnProperty('originDocPath')) return next(new Error('no originDocPath key founded'));
+  if (!docObject.originDocPath) return next(new Error('no originDocPath key founded'));
   const filename = path.basename(docObject.originDocPath, '.xml');
   const directory = path.dirname(docObject.originDocPath);
   const teiDocDirectory = (directory[0] === '/') ? directory : path.join(__dirname, directory);
@@ -26,8 +26,8 @@ coXslt.doTheJob = function (docObject, next) {
     })
     .then(() => {
       const originDocPath = (docObject.originDocPath[0] === '/') ? docObject.originDocPath : path.join(__dirname, docObject.originDocPath);
-      let conf = typeof coXslt.config !== "undefined" ? coXslt.config : {};
-      if (typeof conf.today === "undefined") conf.today = today();
+      const conf = typeof coXslt.config !== 'undefined' ? coXslt.config : {};
+      if (typeof conf.today === 'undefined') conf.today = today();
       return transformer.applyAsync(originDocPath, conf);
     })
     .then(xmlTei => fse.writeFile(teiDocPath, xmlTei))
@@ -42,20 +42,17 @@ coXslt.doTheJob = function (docObject, next) {
     });
 };
 
-function today() {
-  let date = new Date(),
-    dd = date.getDate(),
-    mm = date.getMonth()+1,
-    yyyy = date.getFullYear();
+function today () {
+  const date = new Date();
+  let dd = date.getDate();
+  let mm = date.getMonth() + 1;
+  const yyyy = date.getFullYear();
 
-  if(dd<10) {
-    dd='0'+dd;
-  }
+  if (dd < 10) dd = '0' + dd;
 
-  if(mm<10) {
-    mm='0'+mm;
-  }
-  return yyyy+'/'+mm+'/'+dd;
+  if (mm < 10) mm = '0' + mm;
+
+  return yyyy + '/' + mm + '/' + dd;
 }
 
 module.exports = coXslt;

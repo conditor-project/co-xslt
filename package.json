@@ -14,7 +14,7 @@
     "conditor"
   ],
   "author": "conditor-team",
-  "license": "GNU",
+  "license": "CECILL-2.1",
   "dependencies": {
     "async": "^3.2.0",
     "bluebird": "^3.7.2",

@@ -3,7 +3,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const pkg = require('../package.json');
 const coXslt = require('..');
 const { expect } = require('chai');
 
@@ -30,51 +29,40 @@ const docObjects = {};
 const rootDir = path.resolve(__dirname, 'dataset/');
 const directories = fs.readdirSync(rootDir);
 
-for (let i = 0; i < directories.length; i++) {
-  const directory = directories[i];
+for (const directory of directories) {
   const dir = path.resolve(rootDir, directory);
   const dirStats = fs.statSync(dir);
   if (dirStats.isDirectory()) {
     const files = fs.readdirSync(dir);
-    for (let j = 0; j < files.length; j++) {
-      const file = files[j];
-      const filePath = path.resolve(dir, file);
+    for (const filename of files) {
+      const filePath = path.resolve(dir, filename);
       const fileStats = fs.statSync(filePath);
-      if (fileStats.isFile() && file.indexOf('.xml') > -1) {
+      if (fileStats.isFile() && path.extname(filename) === '.xml') {
         const docObject = buildDocObject(directory, filePath, dir);
-        typeof docObjects[docObject.source] !== 'undefined' && Array.isArray(docObjects[docObject.source])
-          ? docObjects[docObject.source].push(docObject)
-          : (docObjects[docObject.source] = [docObject]);
+        Array.isArray(docObjects[docObject.source]) ? docObjects[docObject.source].push(docObject) : (docObjects[docObject.source] = [docObject]);
       }
     }
   }
 }
 
-describe(pkg.name + '/index.js', function () {
-  describe('doTheJob', function () {
-    for (const source in docObjects) {
-      describe('Source : ' + source, function () {
-        for (let i = 0; i < docObjects[source].length; i++) {
-          it(
-            'test on ' +
-              docObjects[source][i].originDocPath.substring(docObjects[source][i].corpusRoot.length + 1) +
-              ' should pass',
-            function (done) {
-              coXslt.doTheJob(docObjects[source][i], function (error, docObject) {
-                if (error) {
-                  console.log(error);
-                  return done(error);
-                }
-                expect(docObject).to.have.own.property('teiDocPath');
-                const teiExists = fs.existsSync(docObject.teiDocPath);
-                expect(teiExists).to.be.true;
-                if (fs.statSync(docObject.teiDocPath).isFile()) fs.unlinkSync(docObject.teiDocPath);
-                return done();
-              });
-            }
-          );
-        }
-      });
-    }
-  });
+describe('doTheJob', () => {
+  for (const source in docObjects) {
+    describe('Source : ' + source, () => {
+      for (const docObject of docObjects[source]) {
+        it(`test on ${docObject.originDocPath.substring(docObject.corpusRoot.length + 1)} should pass`, (done) => {
+          coXslt.doTheJob(docObject, error => {
+            expect(error).to.be.undefined;
+            expect(docObject.teiDocPath).to.not.be.undefined;
+
+            const teiExists = fs.existsSync(docObject.teiDocPath);
+            expect(teiExists).to.be.true;
+
+            if (teiExists) fs.unlinkSync(docObject.teiDocPath);
+
+            done();
+          });
+        });
+      }
+    });
+  }
 });

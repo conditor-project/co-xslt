@@ -6,9 +6,6 @@ const path = require('path');
 const coXslt = require('..');
 const { expect } = require('chai');
 
-const SegfaultHandler = require('segfault-handler');
-SegfaultHandler.registerHandler('crash.log');
-
 function buildDocObject (source, originDocPath, corpusRoot) {
   return {
     corpusRoot: corpusRoot,
@@ -47,9 +44,9 @@ for (const directory of directories) {
 
 describe('doTheJob', () => {
   for (const source in docObjects) {
-    describe('Source : ' + source, () => {
+    describe('Source: ' + source, () => {
       for (const docObject of docObjects[source]) {
-        it(`test on ${docObject.originDocPath.substring(docObject.corpusRoot.length + 1)} should pass`, (done) => {
+        it(`Test on ${path.basename(docObject.originDocPath)} should pass`, (done) => {
           coXslt.doTheJob(docObject, error => {
             expect(error).to.be.undefined;
             expect(docObject.teiDocPath).to.not.be.undefined;

@@ -18,11 +18,15 @@ coXslt.doTheJob = (docObject, callback) => {
   fs.ensureDir(teiDocDirectory)
     .then(() => getStylesheetFrom(docObject.source))
     .then(stylesheets => {
-      if (stylesheets.length === 0) return Promise.reject(new Error(`No stylesheet founded for ${docObject.source}`));
-      // FIXME : waiting a single xsl stylesheet for pubmed
-      // if (stylesheets.length > 1) return Promise.reject(new Error(`more than one stylesheet founded for ${docObject.source}`));
-      // const stylesheet = stylesheets.pop();
-      const stylesheet = stylesheets[0];
+      if (stylesheets.length === 0) {
+        return Promise.reject(handleError(docObject, 'NoStylesheetError', new Error(`No stylesheet found for ${docObject.source}`)));
+      }
+
+      if (docObject.source === 'pubmed' && stylesheets.length > 1) {
+        return Promise.reject(handleError(docObject, 'MultiplePubmedStylesheetsError', new Error('More than one stylesheet found for Pubmed')));
+      }
+
+      const stylesheet = stylesheets.pop();
 
       return new Promise((resolve, reject) => {
         transformer.loadStylesheet(stylesheet.path, err => err ? reject(handleError(docObject, 'LoadStylesheetError', err)) : resolve());

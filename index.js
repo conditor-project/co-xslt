@@ -2,18 +2,32 @@ const fs = require('fs-extra');
 const path = require('path');
 const Computron = require('computron');
 const { getStylesheetFrom } = require('tei-conditor');
+const _ = require('lodash');
 
 const coXslt = {};
 coXslt.doTheJob = (docObject, callback) => {
-  if (!docObject.originDocPath) {
-    return callback(handleError(docObject, 'NoOriginDocPathError', new Error('No originDocPath key found in docObject')));
+  if (!docObject.idIstex) {
+    return callback(handleError(docObject, 'NoIdIstexError', new Error('No idIstex found in docObject')));
   }
 
-  const filename = path.basename(docObject.originDocPath, '.xml');
-  const directory = path.dirname(docObject.originDocPath);
-  const teiDocDirectory = path.isAbsolute(directory) ? directory : path.join(__dirname, directory);
-  const teiDocPath = path.join(teiDocDirectory, `${filename}.tei`);
+  if (!docObject.corpusOutput) {
+    return callback(handleError(docObject, 'NoCorpusOutputError', new Error('No corpusOutput found in docObject')));
+  }
+
+  const originalXmlFile = _.find(docObject.metadata, { mime: 'application/xml', original: true });
+  if (!originalXmlFile) {
+    return callback(handleError(docObject, 'NoOriginalXmlError', new Error('No original XML found in metadata array')));
+  }
+
+  const { idIstex } = docObject;
+  const teiDocDirectory = path.join(docObject.corpusOutput, idIstex[0], idIstex[1], idIstex[2], idIstex, 'metadata');
+  const teiDocPath = path.join(teiDocDirectory, `${idIstex}.tei.xml`);
   const transformer = new Computron();
+
+  // If docObject.source is undefined, set it to what is after 'conditor:' in docObject.cartoType
+  if (!docObject.source && docObject.cartoType.startsWith('conditor:')) {
+    docObject.source = docObject.cartoType.substring(9);
+  }
 
   fs.ensureDir(teiDocDirectory)
     .then(() => getStylesheetFrom(docObject.source))
@@ -33,18 +47,22 @@ coXslt.doTheJob = (docObject, callback) => {
       });
     })
     .then(() => {
-      const originDocPath = path.isAbsolute(docObject.originDocPath) ? docObject.originDocPath : path.join(__dirname, docObject.originDocPath);
       const conf = coXslt.config ? coXslt.config : {};
       if (!conf.today) conf.today = today();
 
       return new Promise((resolve, reject) => {
-        transformer.apply(originDocPath, conf, (err, result) => err ? reject(handleError(docObject, 'ApplyStylesheetError', err)) : resolve(result));
+        transformer.apply(originalXmlFile.path, conf, (err, result) => err ? reject(handleError(docObject, 'ApplyStylesheetError', err)) : resolve(result));
       });
     })
     .then(xmlTei => fs.writeFile(teiDocPath, xmlTei))
     .then(() => {
+      docObject.metadata.push({
+        path: teiDocPath,
+        mime: 'application/tei+xml',
+        original: false,
+      });
+
       docObject.path = teiDocPath;
-      docObject.teiDocPath = teiDocPath;
 
       callback();
     })

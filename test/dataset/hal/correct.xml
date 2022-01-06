@@ -1,0 +1,238 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:hal="http://hal.archives-ouvertes.fr/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://api.archives-ouvertes.fr/documents/aofr-sword.xsd">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>HAL TEI export of anses-01903744</title>
+      </titleStmt>
+      <publicationStmt>
+        <distributor>CCSD</distributor>
+        <availability status="restricted">
+          <licence target="http://creativecommons.org/licenses/by/4.0/">Distributed under a Creative Commons Attribution 4.0 International License</licence>
+        </availability>
+        <date when="2020-01-11T01:27:04+01:00" />
+      </publicationStmt>
+      <sourceDesc>
+        <p part="N">HAL API platform</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listBibl>
+        <biblFull>
+          <titleStmt>
+            <title xml:lang="en">Is Drinking Water a Major Route of Human Exposure to Alkylphenol and Bisphenol Contaminants in France?</title>
+            <author role="aut">
+              <persName>
+                <forename type="first">Adeline</forename>
+                <surname>Colin</surname>
+              </persName>
+              <idno type="halauthorid">11291933</idno>
+              <affiliation ref="#struct-406806" />
+            </author>
+            <author role="aut">
+              <persName>
+                <forename type="first">Cristina</forename>
+                <surname>Bach</surname>
+              </persName>
+              <email type="md5">8f786f050b51e2486bf6713306423d46</email>
+              <email type="domain">anses.fr</email>
+              <idno type="halauthorid">708521</idno>
+              <affiliation ref="#struct-406806" />
+            </author>
+            <author role="aut">
+              <persName>
+                <forename type="first">Christophe</forename>
+                <surname>Rosin</surname>
+              </persName>
+              <email type="md5">75f09e4e6dbdeba576a0fc9db74321ab</email>
+              <email type="domain">adp.fr</email>
+              <idno type="halauthorid">549562</idno>
+              <affiliation ref="#struct-406806" />
+            </author>
+            <author role="aut">
+              <persName>
+                <forename type="first">Jean-François</forename>
+                <surname>Munoz</surname>
+              </persName>
+              <email type="md5">b8be86748024a0106e1d7eb42ab6d462</email>
+              <email type="domain">anses.fr</email>
+              <idno type="halauthorid">722161</idno>
+              <affiliation ref="#struct-406806" />
+            </author>
+            <author role="aut">
+              <persName>
+                <forename type="first">Xavier</forename>
+                <surname>Dauchy</surname>
+              </persName>
+              <idno type="halauthorid">768479</idno>
+              <affiliation ref="#struct-406806" />
+            </author>
+            <editor role="depositor">
+              <persName>
+                <forename>Sophie</forename>
+                <surname>Marchal-Mauer</surname>
+              </persName>
+              <email type="md5">5b51034eed7d534f9289e9cbac1014d7</email>
+              <email type="domain">anses.fr</email>
+            </editor>
+          </titleStmt>
+          <editionStmt>
+            <edition n="v1" type="current">
+              <date type="whenSubmitted">2018-10-24 15:48:47</date>
+              <date type="whenModified">2019-10-21 16:38:02</date>
+              <date type="whenReleased">2018-10-24 15:48:47</date>
+              <date type="whenProduced">2014-01</date>
+            </edition>
+            <respStmt>
+              <resp>contributor</resp>
+              <name key="132625">
+                <persName>
+                  <forename>Sophie</forename>
+                  <surname>Marchal-Mauer</surname>
+                </persName>
+                <email type="md5">5b51034eed7d534f9289e9cbac1014d7</email>
+                <email type="domain">anses.fr</email>
+              </name>
+            </respStmt>
+          </editionStmt>
+          <publicationStmt>
+            <distributor>CCSD</distributor>
+            <idno type="halId">anses-01903744</idno>
+            <idno type="halUri">https://hal-anses.archives-ouvertes.fr/anses-01903744</idno>
+            <idno type="halBibtex">colin:anses-01903744</idno>
+            <idno type="halRefHtml">&lt;i&gt;Archives of Environmental Contamination and Toxicology&lt;/i&gt;, Springer Verlag, 2014, 66 (1), pp.86 - 99. &lt;a target="_blank" href="https://dx.doi.org/10.1007/s00244-013-9942-0"&gt;&amp;#x27E8;10.1007/s00244-013-9942-0&amp;#x27E9;&lt;/a&gt;</idno>
+            <idno type="halRef">Archives of Environmental Contamination and Toxicology, Springer Verlag, 2014, 66 (1), pp.86 - 99. &amp;#x27E8;10.1007/s00244-013-9942-0&amp;#x27E9;</idno>
+          </publicationStmt>
+          <seriesStmt>
+            <idno type="stamp" n="ANSES">Agence nationale de sécurité sanitaire de l'alimentation, de l'environnement et du travail</idno>
+            <idno type="stamp" n="SANTE_PUB_INSERM" corresp="INSERM">Santé Publique à l'Inserm</idno>
+          </seriesStmt>
+          <notesStmt>
+            <note type="audience" n="2">International</note>
+            <note type="popular" n="0">No</note>
+            <note type="peer" n="1">Yes</note>
+          </notesStmt>
+          <sourceDesc>
+            <biblStruct>
+              <analytic>
+                <title xml:lang="en">Is Drinking Water a Major Route of Human Exposure to Alkylphenol and Bisphenol Contaminants in France?</title>
+                <author role="aut">
+                  <persName>
+                    <forename type="first">Adeline</forename>
+                    <surname>Colin</surname>
+                  </persName>
+                  <idno type="halauthorid">11291933</idno>
+                  <affiliation ref="#struct-406806" />
+                </author>
+                <author role="aut">
+                  <persName>
+                    <forename type="first">Cristina</forename>
+                    <surname>Bach</surname>
+                  </persName>
+                  <email type="md5">8f786f050b51e2486bf6713306423d46</email>
+                  <email type="domain">anses.fr</email>
+                  <idno type="halauthorid">708521</idno>
+                  <affiliation ref="#struct-406806" />
+                </author>
+                <author role="aut">
+                  <persName>
+                    <forename type="first">Christophe</forename>
+                    <surname>Rosin</surname>
+                  </persName>
+                  <email type="md5">75f09e4e6dbdeba576a0fc9db74321ab</email>
+                  <email type="domain">adp.fr</email>
+                  <idno type="halauthorid">549562</idno>
+                  <affiliation ref="#struct-406806" />
+                </author>
+                <author role="aut">
+                  <persName>
+                    <forename type="first">Jean-François</forename>
+                    <surname>Munoz</surname>
+                  </persName>
+                  <email type="md5">b8be86748024a0106e1d7eb42ab6d462</email>
+                  <email type="domain">anses.fr</email>
+                  <idno type="halauthorid">722161</idno>
+                  <affiliation ref="#struct-406806" />
+                </author>
+                <author role="aut">
+                  <persName>
+                    <forename type="first">Xavier</forename>
+                    <surname>Dauchy</surname>
+                  </persName>
+                  <idno type="halauthorid">768479</idno>
+                  <affiliation ref="#struct-406806" />
+                </author>
+              </analytic>
+              <monogr>
+                <idno type="halJournalId" status="VALID">3114</idno>
+                <idno type="issn">0090-4341</idno>
+                <idno type="eissn">1432-0703</idno>
+                <title level="j">Archives of Environmental Contamination and Toxicology</title>
+                <imprint>
+                  <publisher>Springer Verlag</publisher>
+                  <biblScope unit="volume">66</biblScope>
+                  <biblScope unit="issue">1</biblScope>
+                  <biblScope unit="pp">86 - 99</biblScope>
+                  <date type="datePub">2014-01</date>
+                </imprint>
+              </monogr>
+              <idno type="doi">10.1007/s00244-013-9942-0</idno>
+            </biblStruct>
+          </sourceDesc>
+          <profileDesc>
+            <langUsage>
+              <language ident="en">English</language>
+            </langUsage>
+            <textClass>
+              <keywords scheme="author">
+                <term xml:lang="en">Target Compound</term>
+                <term xml:lang="en">Bottle Water</term>
+                <term xml:lang="en">Nonylphenol</term>
+                <term xml:lang="en">Treated Water</term>
+                <term xml:lang="en">Sample</term>
+                <term xml:lang="en">Public Water System</term>
+              </keywords>
+              <classCode scheme="halDomain" n="sdv.aen">Life Sciences [q-bio]/Food and Nutrition</classCode>
+              <classCode scheme="halDomain" n="sdv.spee">Life Sciences [q-bio]/Santé publique et épidémiologie</classCode>
+              <classCode scheme="halTypology" n="ART">Journal articles</classCode>
+            </textClass>
+            <abstract xml:lang="en">
+              <p>The main objective of this study was to evaluate potential exposure of a significant part of the French population to alkylphenol and bisphenol contaminants due to water consumption. The occurrence of 11 alkylphenols and bisphenols was studied in raw water and treated water samples from public water systems. One sampling campaign was performed from October 2011 to May 2012. Sampling was equally distributed across 100 French departments. In total, 291 raw water samples and 291 treated water samples were analyzed in this study, representing approximately 20 % of the national water supply flow. The occurrence of the target compounds was also determined for 29 brands of bottled water (polyethylene terephthalate [PET] bottles, polycarbonate [PC] reusable containers, and aluminum cans [ACs]) and in 5 drinking water networks where epoxy resin has been used as coating for pipes. In raw water samples, the highest individual concentration was 1,430 ng/L for bisphenol A (BPA). Of the investigated compounds, nonylphenol (NP), nonylphenol 1-carboxylic acid (NP1EC), BPA, and nonylphenol 2-ethoxylate (NP2EO) predominated (detected in 18.6, 18.6, 14.4, and 10 % of samples, respectively). Geographical variability was observed with departments crossed by major rivers or with high population densities being more affected by contamination. In treated water samples, the highest individual concentration was 505 ng/L for NP. Compared with raw water, target compounds were found in lower amounts in treated water. This difference suggests a relative effectiveness of certain water treatments for the elimination of these pollutants; however, there is also their possible transformation by reaction with chlorine. No target compounds were found in drinking water pipes coated with epoxy resin, in PET bottled water, or in water from ACs. However, levels of BPA in PC bottled water ranged from 70 to 4,210 ng/L with greater level observed in newly manufactured bottles. 4-Tert-butylphenol was only detected in recently manufactured bottles. The values observed for the monitored compounds indicate that drinking water is most likely not the main source of exposure.</p>
+            </abstract>
+          </profileDesc>
+        </biblFull>
+      </listBibl>
+    </body>
+    <back>
+      <listOrg type="structures">
+        <org type="laboratory" xml:id="struct-406806" status="VALID">
+          <idno type="RNSR">201023297J</idno>
+          <orgName>Laboratoire d'hydrologie de Nancy</orgName>
+          <orgName type="acronym">LHN</orgName>
+          <date type="start">2018-07-01</date>
+          <desc>
+            <address>
+              <addrLine>40, rue Lionnois 54000 Nancy</addrLine>
+              <country key="FR" />
+            </address>
+          </desc>
+          <listRelation>
+            <relation active="#struct-301715" type="direct" />
+          </listRelation>
+        </org>
+        <org type="institution" xml:id="struct-301715" status="VALID">
+          <orgName>Agence nationale de sécurité sanitaire de l'alimentation, de l'environnement et du travail</orgName>
+          <orgName type="acronym">ANSES</orgName>
+          <date type="start">2010-07-01</date>
+          <desc>
+            <address>
+              <addrLine>14 rue Pierre et Marie Curie94701 MAISONS-ALFORT Cedex</addrLine>
+              <country key="FR" />
+            </address>
+          </desc>
+        </org>
+      </listOrg>
+    </back>
+  </text>
+</TEI>

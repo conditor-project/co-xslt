@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/conditor-project/co-xslt.svg?branch=master)](https://travis-ci.org/conditor-project/co-xslt)
+[![Tests status](https://github.com/conditor-project/co-xslt/actions/workflows/tests.yml/badge.svg)](https://github.com/conditor-project/co-xslt/actions/workflows/tests.yml)
 
 # co-xslt
 

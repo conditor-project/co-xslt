@@ -54,7 +54,13 @@ coXslt.doTheJob = (docObject, callback) => {
         transformer.apply(originalXmlFile.path, conf, (err, result) => err ? reject(handleError(docObject, 'ApplyStylesheetError', err)) : resolve(result));
       });
     })
-    .then(xmlTei => fs.writeFile(teiDocPath, xmlTei))
+    .then(xmlTei => {
+      return new Promise((resolve, reject) => {
+        fs.writeFile(teiDocPath, xmlTei)
+          .then(() => resolve())
+          .catch(err => reject(handleError(docObject, 'WriteFileError', err)));
+      });
+    })
     .then(() => {
       docObject.metadata.push({
         path: teiDocPath,

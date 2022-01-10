@@ -36,8 +36,8 @@ coXslt.doTheJob = (docObject, callback) => {
         return Promise.reject(handleError(docObject, 'NoStylesheetError', new Error(`No stylesheet found for ${docObject.source}`)));
       }
 
-      if (docObject.source === 'pubmed' && stylesheets.length > 1) {
-        return Promise.reject(handleError(docObject, 'MultiplePubmedStylesheetsError', new Error('More than one stylesheet found for Pubmed')));
+      if (stylesheets.length > 1) {
+        return Promise.reject(handleError(docObject, 'MultipleStylesheetsError', new Error('More than one stylesheet found')));
       }
 
       const stylesheet = stylesheets.pop();

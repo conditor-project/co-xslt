@@ -47,7 +47,7 @@ coXslt.beforeAnyJob = callback => {
     );
   });
 
-  Promise.all(promises).then(callback).catch(callback);
+  Promise.all(promises).then(() => callback()).catch(callback);
 };
 
 coXslt.doTheJob = (docObject, callback) => {

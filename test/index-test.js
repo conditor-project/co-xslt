@@ -8,6 +8,12 @@ const coXslt = require('../index');
 const testData = require('./dataset/docObjects');
 
 describe('doTheJob', () => {
+  before(done => {
+    coXslt.beforeAnyJob(() => {
+      done();
+    });
+  });
+
   describe('Errors', () => {
     it('testData.noIdIstex returns an error', done => {
       coXslt.doTheJob(testData.noIdIstex, err => {

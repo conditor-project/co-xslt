@@ -4,7 +4,52 @@ const Computron = require('computron');
 const { getStylesheetFrom } = require('tei-conditor');
 const _ = require('lodash');
 
+const computronInstances = [];
 const coXslt = {};
+
+coXslt.beforeAnyJob = callback => {
+  const possibleSources = [
+    'crossref',
+    'hal',
+    'pubmed',
+    'sudoc-ouvrages',
+    'sudoc-theses',
+  ];
+  const promises = [];
+
+  possibleSources.forEach(source => {
+    promises.push(getStylesheetFrom(source)
+      .then(stylesheets => {
+        if (stylesheets.length === 0) {
+          return Promise.reject(new Error(`No stylesheet found for ${source}`));
+        }
+
+        if (stylesheets.length > 1) {
+          return Promise.reject(new Error('More than one stylesheet found'));
+        }
+
+        const computronInstance = new Computron();
+        const stylesheet = stylesheets.pop();
+
+        return new Promise((resolve, reject) => {
+          computronInstance.loadStylesheet(stylesheet.path, err => {
+            if (err) reject(err);
+
+            computronInstances.push({
+              name: source,
+              instance: computronInstance,
+            });
+
+            resolve();
+          });
+        });
+      })
+    );
+  });
+
+  Promise.all(promises).then(callback).catch(callback);
+};
+
 coXslt.doTheJob = (docObject, callback) => {
   if (!docObject.idIstex) {
     return callback(handleError(docObject, 'NoIdIstexError', new Error('No idIstex found in docObject')));
@@ -22,7 +67,13 @@ coXslt.doTheJob = (docObject, callback) => {
   const { idIstex } = docObject;
   const teiDocDirectory = path.join(docObject.corpusOutput, idIstex[0], idIstex[1], idIstex[2], idIstex, 'metadata');
   const teiDocPath = path.join(teiDocDirectory, `${idIstex}.tei.xml`);
-  const transformer = new Computron();
+  let transformer = computronInstances.find(element => element.name === docObject.source);
+
+  if (!transformer) {
+    return callback(handleError(docObject, 'NoStylesheetError', new Error(`No stylesheet found for ${docObject.source}`)));
+  }
+
+  transformer = transformer.instance;
 
   // If docObject.source is undefined, set it to what is after 'conditor:' in docObject.cartoType
   if (!docObject.source && docObject.cartoType.startsWith('conditor:')) {
@@ -30,22 +81,6 @@ coXslt.doTheJob = (docObject, callback) => {
   }
 
   fs.ensureDir(teiDocDirectory)
-    .then(() => getStylesheetFrom(docObject.source))
-    .then(stylesheets => {
-      if (stylesheets.length === 0) {
-        return Promise.reject(handleError(docObject, 'NoStylesheetError', new Error(`No stylesheet found for ${docObject.source}`)));
-      }
-
-      if (stylesheets.length > 1) {
-        return Promise.reject(handleError(docObject, 'MultipleStylesheetsError', new Error('More than one stylesheet found')));
-      }
-
-      const stylesheet = stylesheets.pop();
-
-      return new Promise((resolve, reject) => {
-        transformer.loadStylesheet(stylesheet.path, err => err ? reject(handleError(docObject, 'LoadStylesheetError', err)) : resolve());
-      });
-    })
     .then(() => {
       const conf = coXslt.config ? coXslt.config : {};
       if (!conf.today) conf.today = today();

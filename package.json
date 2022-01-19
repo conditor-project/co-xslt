@@ -16,7 +16,7 @@
   "author": "conditor-team",
   "license": "CECILL-2.1",
   "dependencies": {
-    "computron": "^2.0.0",
+    "computron": "^2.0.1",
     "fs-extra": "^10.0.0",
     "lodash": "^4.17.21",
     "tei-conditor": "git+https://github.com/conditor-project/tei-conditor.git"

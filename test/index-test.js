@@ -9,7 +9,7 @@ const testData = require('./dataset/docObjects');
 
 describe('doTheJob', () => {
   before(done => {
-    coXslt.beforeAnyJob(() => {
+    coXslt.initialJob(() => {
       done();
     });
   });

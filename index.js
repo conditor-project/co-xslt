@@ -7,7 +7,7 @@ const _ = require('lodash');
 const computronInstances = [];
 const coXslt = {};
 
-coXslt.beforeAnyJob = callback => {
+coXslt.initialJob = callback => {
   const possibleSources = [
     'crossref',
     'hal',
@@ -20,20 +20,20 @@ coXslt.beforeAnyJob = callback => {
   possibleSources.forEach(source => {
     promises.push(getStylesheetFrom(source)
       .then(stylesheets => {
-        if (stylesheets.length === 0) {
-          return Promise.reject(new Error(`No stylesheet found for ${source}`));
-        }
-
-        if (stylesheets.length > 1) {
-          return Promise.reject(new Error('More than one stylesheet found'));
-        }
-
-        const computronInstance = new Computron();
-        const stylesheet = stylesheets.pop();
-
         return new Promise((resolve, reject) => {
+          if (stylesheets.length === 0) {
+            return reject(new Error(`No stylesheet found for ${source}`));
+          }
+
+          if (stylesheets.length > 1) {
+            return reject(new Error('More than one stylesheet found'));
+          }
+
+          const computronInstance = new Computron();
+          const stylesheet = stylesheets.pop();
+
           computronInstance.loadStylesheet(stylesheet.path, err => {
-            if (err) reject(err);
+            if (err) return reject(err);
 
             computronInstances.push({
               name: source,
@@ -64,21 +64,21 @@ coXslt.doTheJob = (docObject, callback) => {
     return callback(handleError(docObject, 'NoOriginalXmlError', new Error('No original XML found in metadata array')));
   }
 
+  // If docObject.source is undefined, set it to what is after 'conditor:' in docObject.cartoType
+  if (!docObject.source && docObject.cartoType.startsWith('conditor:')) {
+    docObject.source = docObject.cartoType.substring(9);
+  }
+
   const { idIstex } = docObject;
   const teiDocDirectory = path.join(docObject.corpusOutput, idIstex[0], idIstex[1], idIstex[2], idIstex, 'metadata');
   const teiDocPath = path.join(teiDocDirectory, `${idIstex}.tei.xml`);
   let transformer = computronInstances.find(element => element.name === docObject.source);
 
   if (!transformer) {
-    return callback(handleError(docObject, 'NoStylesheetError', new Error(`No stylesheet found for ${docObject.source}`)));
+    return callback(handleError(docObject, 'NoComputronInstanceError', new Error(`No Computron instance found for ${docObject.source}`)));
   }
 
   transformer = transformer.instance;
-
-  // If docObject.source is undefined, set it to what is after 'conditor:' in docObject.cartoType
-  if (!docObject.source && docObject.cartoType.startsWith('conditor:')) {
-    docObject.source = docObject.cartoType.substring(9);
-  }
 
   fs.ensureDir(teiDocDirectory)
     .then(() => {

@@ -32,16 +32,18 @@ coXslt.initialJob = callback => {
           const computronInstance = new Computron();
           const stylesheet = stylesheets.pop();
 
-          computronInstance.loadStylesheet(stylesheet.path, err => {
-            if (err) return reject(err);
+          try {
+            computronInstance.loadStylesheet(stylesheet.path);
+          } catch (err) {
+            return reject(err);
+          }
 
-            computronInstances.push({
-              name: source,
-              instance: computronInstance,
-            });
-
-            resolve();
+          computronInstances.push({
+            name: source,
+            instance: computronInstance,
           });
+
+          resolve();
         });
       })
     );
@@ -86,12 +88,17 @@ coXslt.doTheJob = (docObject, callback) => {
       if (!conf.today) conf.today = today();
 
       return new Promise((resolve, reject) => {
-        transformer.apply(originalXmlFile.path, conf, (err, result) => err ? reject(handleError(docObject, 'ApplyStylesheetError', err)) : resolve(result));
+        try {
+          const result = transformer.apply(originalXmlFile.path, conf);
+          resolve(result);
+        } catch (err) {
+          reject(handleError(docObject, 'ApplyStylesheetError', err));
+        }
       });
     })
     .then(xmlTei => {
       return new Promise((resolve, reject) => {
-        fs.writeFile(teiDocPath, xmlTei)
+        fs.writeFile(teiDocPath, xmlTei, 'utf-8')
           .then(() => resolve())
           .catch(err => reject(handleError(docObject, 'WriteFileError', err)));
       });

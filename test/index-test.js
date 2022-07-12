@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-undef */
+/* eslint-env mocha */
 
 const fs = require('fs');
 const _ = require('lodash');
@@ -17,29 +16,32 @@ describe('doTheJob', () => {
   describe('Errors', () => {
     it('testData.noIdIstex returns an error', done => {
       coXslt.doTheJob(testData.noIdIstex, err => {
-        expect(err).to.be.instanceOf(Error);
+        expect(err).to.be.an.instanceOf(Error);
+        expect(err.name).to.equal('NoIdIstexError');
         done();
       });
     });
 
     it('testData.noCorpusOutput returns an error', done => {
       coXslt.doTheJob(testData.noCorpusOutput, err => {
-        expect(err).to.be.instanceOf(Error);
+        expect(err).to.be.an.instanceOf(Error);
+        expect(err.name).to.equal('NoCorpusOutputError');
         done();
       });
     });
 
     it('testData.noOriginalXml returns an error', done => {
       coXslt.doTheJob(testData.noOriginalXml, err => {
-        expect(err).to.be.instanceOf(Error);
+        expect(err).to.be.an.instanceOf(Error);
+        expect(err.name).to.equal('NoOriginalXmlError');
         done();
       });
     });
 
     it('testData.inexistantOriginalXml returns an error', done => {
       coXslt.doTheJob(testData.inexistantOriginalXml, err => {
-        expect(err).to.be.instanceOf(Error);
-        expect(err.name).to.be.equal('ApplyStylesheetError');
+        expect(err).to.be.an.instanceOf(Error);
+        expect(err.name).to.equal('ApplyStylesheetError');
         done();
       });
     });
@@ -49,11 +51,11 @@ describe('doTheJob', () => {
     it('testData.crossref creates a correct TEI', done => {
       const docObject = testData.crossref;
       coXslt.doTheJob(docObject, err => {
-        expect(err).to.be.undefined;
+        expect(err).to.equal(undefined);
 
         const teiFile = _.find(docObject.metadata, { mime: 'application/tei+xml', original: false });
-        expect(teiFile).to.not.be.undefined;
-        expect(fs.existsSync(teiFile.path)).to.be.true;
+        expect(teiFile).not.to.equal(undefined);
+        expect(fs.existsSync(teiFile.path)).to.equal(true);
 
         done();
       });
@@ -62,11 +64,11 @@ describe('doTheJob', () => {
     it('testData.hal creates a correct TEI', done => {
       const docObject = testData.hal;
       coXslt.doTheJob(docObject, err => {
-        expect(err).to.be.undefined;
+        expect(err).to.equal(undefined);
 
         const teiFile = _.find(docObject.metadata, { mime: 'application/tei+xml', original: false });
-        expect(teiFile).to.not.be.undefined;
-        expect(fs.existsSync(teiFile.path)).to.be.true;
+        expect(teiFile).not.to.equal(undefined);
+        expect(fs.existsSync(teiFile.path)).to.equal(true);
 
         done();
       });
@@ -75,11 +77,11 @@ describe('doTheJob', () => {
     it('testData.pubmed creates a correct TEI', done => {
       const docObject = testData.pubmed;
       coXslt.doTheJob(docObject, err => {
-        expect(err).to.be.undefined;
+        expect(err).to.equal(undefined);
 
         const teiFile = _.find(docObject.metadata, { mime: 'application/tei+xml', original: false });
-        expect(teiFile).to.not.be.undefined;
-        expect(fs.existsSync(teiFile.path)).to.be.true;
+        expect(teiFile).not.to.equal(undefined);
+        expect(fs.existsSync(teiFile.path)).to.equal(true);
 
         done();
       });
@@ -88,11 +90,11 @@ describe('doTheJob', () => {
     it('testData.sudocTheses creates a correct TEI', done => {
       const docObject = testData.sudocTheses;
       coXslt.doTheJob(docObject, err => {
-        expect(err).to.be.undefined;
+        expect(err).to.equal(undefined);
 
         const teiFile = _.find(docObject.metadata, { mime: 'application/tei+xml', original: false });
-        expect(teiFile).to.not.be.undefined;
-        expect(fs.existsSync(teiFile.path)).to.be.true;
+        expect(teiFile).not.to.equal(undefined);
+        expect(fs.existsSync(teiFile.path)).to.equal(true);
 
         done();
       });

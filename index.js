@@ -45,7 +45,7 @@ coXslt.initialJob = callback => {
 
           resolve();
         });
-      })
+      }),
     );
   });
 

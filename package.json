@@ -11,7 +11,8 @@
     "url": "https://github.com/conditor-project/co-xslt.git"
   },
   "keywords": [
-    "conditor"
+    "conditor",
+    "corhal"
   ],
   "author": "conditor-team",
   "license": "CECILL-2.1",

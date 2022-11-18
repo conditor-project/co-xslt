@@ -69,6 +69,8 @@ coXslt.doTheJob = (docObject, callback) => {
   // If docObject.source is undefined, set it to what is after 'conditor:' in docObject.cartoType
   if (!docObject.source && docObject.cartoType.startsWith('conditor:')) {
     docObject.source = docObject.cartoType.substring(9);
+  } else if (!docObject.source && docObject.cartoType.startsWith('corhal:')) {
+    docObject.source = docObject.cartoType.substring(7);
   }
 
   const { idIstex } = docObject;
